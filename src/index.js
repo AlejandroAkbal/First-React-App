@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// Renders squares
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -10,6 +11,7 @@ function Square(props) {
   );
 }
 
+// Renders the board
 class Board extends React.Component {
   renderSquare(i) {
     return (
@@ -45,6 +47,7 @@ class Board extends React.Component {
   }
 }
 
+// Main controller of everything
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -113,6 +116,7 @@ class Game extends React.Component {
   }
 }
 
+// Function which looks like could be an algorithm instead of a hardcoded lines
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -132,6 +136,6 @@ function calculateWinner(squares) {
   }
   return null;
 }
-// ========================================
 
+// Renders everything
 ReactDOM.render(<Game />, document.getElementById('root'));
